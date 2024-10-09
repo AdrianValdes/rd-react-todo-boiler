@@ -9,7 +9,7 @@
                 "noNonNullAssertion": "off"
             },
             "correctness": {
-                "noUnusedImports": "error",
+                "noUnusedImports": "off",
                 "useExhaustiveDependencies": "off"
             },
             "complexity": {
