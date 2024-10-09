@@ -16,6 +16,7 @@
     "@types/node": "^16.18.26",
     "@types/react": "^18.2.5",
     "@types/react-dom": "^18.2.4",
+    "@types/react-i18next": "^8.1.0",
     "i18next": "^22.4.15",
     "i18next-http-backend": "^2.2.0",
     "react": "^18.2.0",
@@ -28,6 +29,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "start:dev": "nodemon",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -52,6 +54,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.3",
+    "nodemon": "^3.1.7",
     "sass": "^1.62.1"
   }
 }
