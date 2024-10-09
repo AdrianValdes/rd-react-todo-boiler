@@ -1,0 +1,25 @@
+{
+    "linter": {
+        "rules": {
+            "suspicious": {
+                "noPrototypeBuiltins": "off"
+            },
+            "style": {
+                "useImportType": "off",
+                "noNonNullAssertion": "off"
+            },
+            "correctness": {
+                "noUnusedImports": "error",
+                "useExhaustiveDependencies": "off"
+            },
+            "complexity": {
+                "noForEach": "off"
+            }
+        }
+    },
+    "javascript": {
+        "parser": {
+            "unsafeParameterDecoratorsEnabled": true
+        }
+    }
+}
