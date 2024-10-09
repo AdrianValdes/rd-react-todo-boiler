@@ -1,4 +1,7 @@
-import { ListItem, ListItemText } from "@mui/material";
+import { Checkbox, ListItem, ListItemText } from "@mui/material";
+import { useDispatch } from "react-redux";
+import { toggleTask } from "./tasksSlice";
+import { Task } from "./types";
 
 /**
  * Renders a task item.
@@ -6,10 +9,18 @@ import { ListItem, ListItemText } from "@mui/material";
  * @param props - The props of the component
  * @returns A task item
  */
-export const TaskItem: React.FC<{ text: string }> = ({ text }) => {
+export const TaskItem: React.FC<Task> = ({ text, id, completed }) => {
+	const dispatch = useDispatch();
+
+	const handleToggle = () => dispatch(toggleTask(id));
+
 	return (
 		<ListItem>
-			<ListItemText primary={text} />
+			<Checkbox checked={completed} onChange={handleToggle} />
+			<ListItemText
+				primary={text}
+				style={{ textDecoration: completed ? "line-through" : "none" }}
+			/>
 		</ListItem>
 	);
 };
