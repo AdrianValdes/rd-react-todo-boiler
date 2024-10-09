@@ -1,6 +1,10 @@
 {
     "taskList": {
         "title": "Meine Aufgaben",
-        "empty": "Sie haben keine Aufgaben"
+        "empty": "Sie haben keine Aufgaben",
+        "addTask": "Neue Aufgabe hinzufügen",
+        "task": "Aufgabe",
+        "add": "Hinzufügen",
+        "cancel": "Abbrechen"
     }
 }
