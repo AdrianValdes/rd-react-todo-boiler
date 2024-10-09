@@ -1,1 +1,6 @@
-{}
+{
+    "taskList": {
+        "title": "Meine Aufgaben",
+        "empty": "Sie haben keine Aufgaben"
+    }
+}
