@@ -4,8 +4,6 @@ import Box from "@mui/material/Box";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
-import { nanoid } from "nanoid";
-
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../store/store";
 import { TaskItem } from "./TaskItem";
@@ -25,7 +23,11 @@ export const TaskList = () => {
 
 	const handleAddTask = () => {
 		if (taskText.trim()) {
-			const task = { id: nanoid(), text: taskText.trim(), completed: false };
+			const task = {
+				id: Date.now().toString(),
+				text: taskText.trim(),
+				completed: false,
+			};
 			dispatch(addTask(task));
 			setTaskText("");
 		}
@@ -41,6 +43,7 @@ export const TaskList = () => {
 					{t("taskList.addTask")}
 				</Typography>
 				<TextField
+					data-testid="task-input"
 					fullWidth
 					value={taskText}
 					onChange={(e) => setTaskText(e.target.value)}
@@ -74,8 +77,8 @@ export const TaskList = () => {
 			</Box>
 			{tasks.length > 0 ? (
 				<List>
-					{tasks.map(({ id, text }) => (
-						<TaskItem key={id} text={text} />
+					{tasks.map(({ id, text, completed }) => (
+						<TaskItem key={id} text={text} id={id} completed={completed} />
 					))}
 				</List>
 			) : (
